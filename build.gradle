@@ -18,12 +18,31 @@ group = 'org.blockchain'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = 1.8
 
-repositories {
-	mavenCentral()
-}
+
+
+repositories
+		{
+			mavenLocal()
+			maven { url "http://dist.wso2.org/maven2/" }
+			mavenCentral()
+		}
 
 
 dependencies {
 	compile('org.springframework.boot:spring-boot-starter')
-	testCompile('org.springframework.boot:spring-boot-starter-test')
+	compile('org.springframework.boot:spring-boot-starter-test')
+
+	//compile 'org.codehaus.groovy:groovy-all:2.2.1'
+	compile "org.springframework.boot:spring-boot-starter-web:$springBootVersion"
+	compile "org.springframework.boot:spring-boot-starter-aop:$springBootVersion"
+	// https://mvnrepository.com/artifact/com.google.common/google-collect
+	compile group: 'com.google.common', name: 'google-collect', version: '1.0-rc1'
+	compile group: 'org.apache.commons', name: 'commons-lang3', version: '3.4'
+	compile group: 'javax.servlet', name: 'jstl', version: '1.2'
+
+
+	//compile "org.springframework.boot:spring-boot-starter-data-mongodb:$springBootVersion"
+	//compile "org.springframework.boot:spring-boot-starter-actuator:$springBootVersion"
+
+	//compile group: 'org.springframework.boot', name: 'spring-boot-starter-test', version: '*'
 }
